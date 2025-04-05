@@ -20,6 +20,8 @@ import BlogViewer from './components/BlogViewer';
 import Header from './components/Header';
 import ProductDetailPage from './pages/ProductDetailPage';
 import ServiceDetailPage from './pages/ServiceDetailPage';
+import SuperVouchers from './pages/SuperVouchers';
+import MyVouchers from './pages/MyVouchers';
 
 function App() {
 
@@ -27,7 +29,7 @@ function App() {
   return (
     <>
       <Header />
-        <AuthProvider>
+      <AuthProvider>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/service" element={<Service />} />
@@ -45,6 +47,9 @@ function App() {
           <Route path="/blogview" element={<BlogViewer />} />
           <Route path="/product/:id" element={<ProductDetailPage />} />
           <Route path="/service/:id" element={<ServiceDetailPage />} />
+          <Route path="/spvc" element={<SuperVouchers />} />
+          <Route path="/myvc" element={<MyVouchers />} />
+          <Route path="/myvc" element={<PrivateRoute element={<MyVouchers />} requiredRole="user" />} />
           {/* Router riêng dành cho admin và manager */}
           <Route path="/admin-sign" element={<SignInPage />} />
           <Route path="/admin" element={<PrivateRoute element={<Admin />} requiredRole={"admin"} />} />
