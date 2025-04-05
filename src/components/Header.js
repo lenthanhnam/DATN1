@@ -110,7 +110,7 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 w-full shadow-sm transition-all ${
+      className={`fixed index-10 z-50 top-0 left-0 w-full shadow-sm transition-all ${
         isScrolled ? "text-black py-4 bg-blue-400" : "bg-transparent text-black p-3"
       }`}
     >
@@ -134,6 +134,7 @@ const Header = () => {
           <Link onClick={handleBlog} to="/blogview" className="text-gray-600 hover:text-maincolor">
             Bài viết
           </Link>
+          <Link to="/spvc" href="#" className="text-gray-600 hover:text-maincolor">Khuyến mãi</Link>
           <Link to="/about" className="text-gray-600 hover:text-maincolor">
             Giới thiệu
           </Link>

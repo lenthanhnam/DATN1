@@ -97,6 +97,39 @@ export const changePassword = async (data) => {
   }
 };
 
+export const saveVoucher = async (voucherId) => {
+    const token = localStorage.getItem('token');
+    if (!token) {
+      return { success: false, message: "Vui lòng đăng nhập để lưu voucher." };
+    }
+    const response = await userApi.post('/user/save-voucher', { voucherId }, {
+      headers: { Authorization: `Bearer ${token}` }
+    });
+    return response.data;
+  };
+  
+  export const removeSavedVoucher = async (voucherId) => {
+    const token = localStorage.getItem('token');
+    if (!token) {
+      return { success: false, message: "Vui lòng đăng nhập để xóa voucher." };
+    }
+    const response = await userApi.post('/user/remove-saved-voucher', { voucherId }, {
+      headers: { Authorization: `Bearer ${token}` }
+    });
+    return response.data;
+  };
+  
+  export const getSavedVouchers = async () => {
+    const token = localStorage.getItem('token');
+    if (!token) {
+      return { success: false, message: "Vui lòng đăng nhập để xem voucher." };
+    }
+    const response = await userApi.get('/user/saved-vouchers', {
+      headers: { Authorization: `Bearer ${token}` }
+    });
+    return response.data;
+  };
+
 export const logoutUser = async () => {
     localStorage.removeItem('token');
     localStorage.removeItem('role'); // Xóa cả role nếu có lưu
