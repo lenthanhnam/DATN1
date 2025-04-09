@@ -36,3 +36,9 @@ export const deleteService = async (id) => {
         const response = await service.delete(`service/delete/${id}`);
         return response.data;
 };
+
+// ServiceAPI.js
+export const bookService = async (bookingData) => {
+    const response = await service.post('booking/create', bookingData);
+    return response.data;
+};
