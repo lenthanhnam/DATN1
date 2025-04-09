@@ -163,7 +163,7 @@ const SuperVouchers = () => {
       const data = await getVouchers({ applicableTo: filterType === 'all' ? '' : filterType });
       const formattedVouchers = data.map((voucher) => ({
         id: voucher._id, // Thêm ID để lưu voucher
-        image: 'https://via.placeholder.com/300x150?text=Voucher',
+        image: 'https://t3.ftcdn.net/jpg/03/24/14/88/360_F_324148849_jZw2PUBaeKGZWahhJ6aS4ajBdrdCoZ5N.jpg',
         title: `Ưu đãi ${voucher.applicableTo === 'products' ? 'sản phẩm' : voucher.applicableTo === 'services' ? 'dịch vụ' : 'tất cả'}`,
         discount: `Giảm ${voucher.discount}% cho ${voucher.applicableTo === 'products' ? 'sản phẩm' : voucher.applicableTo === 'services' ? 'dịch vụ' : 'tất cả'}`,
         discountPercent: `Giảm ${voucher.discount}%`,

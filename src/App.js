@@ -22,6 +22,8 @@ import ProductDetailPage from './pages/ProductDetailPage';
 import ServiceDetailPage from './pages/ServiceDetailPage';
 import SuperVouchers from './pages/SuperVouchers';
 import MyVouchers from './pages/MyVouchers';
+import BookingPage from './pages/BookingPage';
+import BookingHistory from './pages/BookingHistory';
 
 function App() {
 
@@ -47,6 +49,8 @@ function App() {
           <Route path="/blogview" element={<BlogViewer />} />
           <Route path="/product/:id" element={<ProductDetailPage />} />
           <Route path="/service/:id" element={<ServiceDetailPage />} />
+          <Route path="/book-service/:id" element={<BookingPage />} />
+          <Route path="/booking-history" element={<BookingHistory />} />
           <Route path="/spvc" element={<SuperVouchers />} />
           <Route path="/myvc" element={<MyVouchers />} />
           <Route path="/myvc" element={<PrivateRoute element={<MyVouchers />} requiredRole="user" />} />
